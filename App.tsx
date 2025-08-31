@@ -1,118 +1,97 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {Text, StyleSheet, View} from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+//kompenen adalah fungsi yang mereturn/ mengembalikan jsx
+//jsx ini = semua yang mau ditampilkan dalam aplikasi
+const App = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    //sebagai container
+    <View>
+      <View style={styles.container}>
+        <Text style={styles.title}>Basic React Native</Text>
+      </View>
+      <View style={{flexDirection: 'row'}}>
+        <View style={styles.redbox} />
+        <Text style={styles.lightbluebox}> Anggi </Text>
+      </View>
+      <View style={{flexDirection: 'row'}}>
+        <View style={styles.greenbox} />
+        <Text style={styles.lightgreenbox}> Jenifer </Text>
+      </View>
+      <View style={{flexDirection: 'row'}}>
+        <View style={styles.bluebox} />
+        <Text style={styles.lightgraybox}> Pratasik </Text>
+      </View>
     </View>
   );
-}
+};
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
-
+export default App; // ini akan di pakai di index.js
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
+  title: {
+    backgroundColor: 'lightgreen',
+    color: 'white',
+    fontSize: 30,
+    textAlign: 'center',
+    margin: 20,
     fontWeight: '600',
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+  container: {
+    backgroundColor: 'blue',
+    borderColor: 'black',
+    borderWidth: 5,
+    padding: 15,
+    margin: 15,
+    borderRadius: 20,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
   },
-  highlight: {
-    fontWeight: '700',
+  redbox: {
+    backgroundColor: 'red',
+    width: 100,
+    height: 100,
+    margin: 5,
+  },
+
+  greenbox: {
+    backgroundColor: 'green',
+    width: 100,
+    height: 100,
+    margin: 5,
+  },
+
+  bluebox: {
+    backgroundColor: 'blue',
+    width: 100,
+    height: 100,
+    margin: 5,
+  },
+
+  lightbluebox: {
+    backgroundColor: 'lightblue',
+    width: 100,
+    height: 100,
+    margin: 5,
+    alignItems: 'center',
+  },
+
+  lightgreenbox: {
+    backgroundColor: 'lightgreen',
+    width: 100,
+    height: 100,
+    margin: 5,
+    alignItems: 'center',
+  },
+
+  lightgraybox: {
+    backgroundColor: 'lightgray',
+    width: 100,
+    height: 100,
+    margin: 5,
+    alignItems: 'center',
   },
 });
 
-export default App;
+//buat latihan tambah kotak di
