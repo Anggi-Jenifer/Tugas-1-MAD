@@ -12,15 +12,15 @@ const App = () => {
       </View>
       <View style={{flexDirection: 'row'}}>
         <View style={styles.redbox} />
-        <Text style={styles.lightbluebox}> Anggi </Text>
+        <Text style={styles.lightbluebox}> Anggi cantik </Text>
       </View>
       <View style={{flexDirection: 'row'}}>
         <View style={styles.greenbox} />
-        <Text style={styles.lightgreenbox}> Jenifer </Text>
+        <Text style={styles.lightgreenbox}> Jenifer lucu </Text>
       </View>
       <View style={{flexDirection: 'row'}}>
         <View style={styles.bluebox} />
-        <Text style={styles.lightgraybox}> Pratasik </Text>
+        <Text style={styles.lightgraybox}> Pratasik gemes</Text>
       </View>
     </View>
   );
@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    flex: 1,
   },
   redbox: {
     backgroundColor: 'red',
