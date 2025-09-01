@@ -1,96 +1,42 @@
 import React from 'react';
-import {Text, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet} from 'react-native';
+import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
-//kompenen adalah fungsi yang mereturn/ mengembalikan jsx
-//jsx ini = semua yang mau ditampilkan dalam aplikasi
-const App = () => {
-  return (
-    //sebagai container
-    <View>
-      <View style={styles.container}>
-        <Text style={styles.title}>Basic React Native</Text>
-      </View>
-      <View style={{flexDirection: 'row'}}>
-        <View style={styles.redbox} />
-        <Text style={styles.lightbluebox}> Anggi cantik </Text>
-      </View>
-      <View style={{flexDirection: 'row'}}>
-        <View style={styles.greenbox} />
-        <Text style={styles.lightgreenbox}> Jenifer lucu </Text>
-      </View>
-      <View style={{flexDirection: 'row'}}>
-        <View style={styles.bluebox} />
-        <Text style={styles.lightgraybox}> Pratasik gemes</Text>
-      </View>
-    </View>
-  );
-};
-
-export default App; // ini akan di pakai di index.js
 const styles = StyleSheet.create({
-  title: {
-    backgroundColor: 'lightgreen',
-    color: 'white',
-    fontSize: 30,
-    textAlign: 'center',
-    margin: 20,
-    fontWeight: '600',
-  },
   container: {
-    backgroundColor: 'blue',
-    borderColor: 'black',
-    borderWidth: 5,
-    padding: 15,
-    margin: 15,
-    borderRadius: 20,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flex: 1,
   },
-  redbox: {
-    backgroundColor: 'red',
-    width: 100,
-    height: 100,
-    margin: 5,
+  tinyLogo: {
+    width: 50,
+    height: 50,
   },
-
-  greenbox: {
-    backgroundColor: 'green',
-    width: 100,
-    height: 100,
-    margin: 5,
-  },
-
-  bluebox: {
-    backgroundColor: 'blue',
-    width: 100,
-    height: 100,
-    margin: 5,
-  },
-
-  lightbluebox: {
-    backgroundColor: 'lightblue',
-    width: 100,
-    height: 100,
-    margin: 5,
-    alignItems: 'center',
-  },
-
-  lightgreenbox: {
-    backgroundColor: 'lightgreen',
-    width: 100,
-    height: 100,
-    margin: 5,
-    alignItems: 'center',
-  },
-
-  lightgraybox: {
-    backgroundColor: 'lightgray',
-    width: 100,
-    height: 100,
-    margin: 5,
-    alignItems: 'center',
+  logo: {
+    width: 66,
+    height: 58,
   },
 });
 
-//buat latihan tambah kotak di
+const DisplayAnImage = () => (
+  <SafeAreaProvider>
+    <SafeAreaView style={styles.container}>
+      <Image
+        style={styles.tinyLogo}
+        source={require('@expo/snack-static/react-native-logo.png')}
+      />
+      <Image
+        style={styles.tinyLogo}
+        source={{
+          uri: 'https://reactnative.dev/img/tiny_logo.png',
+        }}
+      />
+      <Image
+        style={styles.logo}
+        source={{
+          uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==',
+        }}
+      />
+    </SafeAreaView>
+  </SafeAreaProvider>
+);
+
+export default DisplayAnImage;
