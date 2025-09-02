@@ -12,6 +12,10 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
   },
+  tinyLogo1: {
+    width: 50,
+    height: 50,
+  },
   logo: {
     width: 66,
     height: 58,
@@ -23,12 +27,12 @@ const DisplayAnImage = () => (
     <SafeAreaView style={styles.container}>
       <Image
         style={styles.tinyLogo}
-        source={require('./assets/tiny_logo.png')}
+        source={require('./assets/tiny_logo.jpg')}
       />
       <Image
-        style={styles.tinyLogo}
+        style={styles.tinyLogo1}
         source={{
-          uri: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.openxcell.com%2Freact-native-development%2F&psig=AOvVaw1TxjtvU3je_6t-cpk4-vzQ&ust=1756826184171000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLDTpdrtt48DFQAAAAAdAAAAABAE',
+          uri: 'https://reactnative.dev/img/tiny_logo.png',
         }}
       />
       <Image
