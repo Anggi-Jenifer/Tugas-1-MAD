@@ -23,7 +23,7 @@ const Exercise3 = () => {
           <Text style={styles.value}>Kotamobagu, Sulawesi Utara</Text>
 
           <Text style={styles.label}>Hobi:</Text>
-          <Text style={styles.value}>Membaca Komik</Text>
+          <Text style={styles.value}>Membaca Komik dan Menonton Anime</Text>
         </View>
       </View>
     </ScrollView>
@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     margin: 20,
     fontWeight: '600',
     padding: 10,
+    borderRadius: 50,
   },
   label: {
     fontSize: 16,
